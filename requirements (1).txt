@@ -1,0 +1,74 @@
+# =============================================================================
+# Global Weather Forecasting Engine — Python Dependencies
+# =============================================================================
+# Python >= 3.10 required
+# Install with: pip install -r requirements.txt
+#
+# Sections:
+#   1. Core data stack
+#   2. Machine learning
+#   3. Time-series & forecasting
+#   4. Explainability
+#   5. Visualization & dashboard
+#   6. Geospatial
+#   7. Utilities & dev tooling
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 1. Core data stack
+# -----------------------------------------------------------------------------
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+
+# -----------------------------------------------------------------------------
+# 2. Machine learning
+# -----------------------------------------------------------------------------
+scikit-learn==1.5.0
+xgboost==2.0.3
+lightgbm==4.3.0
+
+# -----------------------------------------------------------------------------
+# 3. Time-series & forecasting
+# -----------------------------------------------------------------------------
+statsmodels==0.14.2
+prophet==1.1.5
+# prophet pulls in pystan; ensure compatible version is resolved:
+pystan==3.9.1
+cmdstanpy==1.2.2
+
+# -----------------------------------------------------------------------------
+# 4. Explainability
+# -----------------------------------------------------------------------------
+shap==0.45.1
+
+# -----------------------------------------------------------------------------
+# 5. Visualization & dashboard
+# -----------------------------------------------------------------------------
+plotly==5.22.0
+streamlit==1.35.0
+streamlit-folium==0.20.0
+matplotlib==3.9.0
+kaleido==0.2.1          # required by plotly for static image export
+
+# -----------------------------------------------------------------------------
+# 6. Geospatial
+# -----------------------------------------------------------------------------
+folium==0.16.0
+
+# -----------------------------------------------------------------------------
+# 7. Utilities & dev tooling
+# -----------------------------------------------------------------------------
+joblib==1.4.2            # model serialization
+tqdm==4.66.4             # progress bars in pipeline scripts
+python-dotenv==1.0.1     # .env support for config management
+click==8.1.7             # CLI entry points (main.py)
+pyyaml==6.0.1            # config file parsing
+loguru==0.7.2            # structured logging alternative
+ipykernel==6.29.4        # Jupyter notebook support
+ipywidgets==8.1.3        # interactive notebook widgets
+nbformat==5.10.4         # notebook format validation
+black==24.4.2            # code formatting
+ruff==0.4.7              # fast linting
+pytest==8.2.2            # unit testing
+pytest-cov==5.0.0        # coverage reporting
