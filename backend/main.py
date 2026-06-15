@@ -112,7 +112,7 @@ def _load_data() -> None:
     if not os.path.exists(RAW_DATA_PATH):
         logger.info("Downloading dataset from Google Drive …")
         gdown.download(
-            "https://drive.google.com/file/d/17Bc2Cmo6Ao-Z1Gkxcybq8c3uryR-sfwD/view?usp=sharing",
+            "https://drive.google.com/uc?id=17Bc2Cmo6Ao-Z1Gkxcybq8c3uryR-sfwD",
             RAW_DATA_PATH,
             quiet=False,
         )
