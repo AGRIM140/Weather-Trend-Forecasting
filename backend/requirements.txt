@@ -1,6 +1,5 @@
 # backend/requirements.txt
 # Install: pip install -r backend/requirements.txt
-
 fastapi
 uvicorn[standard]
 pydantic
@@ -12,3 +11,4 @@ xgboost
 lightgbm
 statsmodels
 shap
+matplotlib
