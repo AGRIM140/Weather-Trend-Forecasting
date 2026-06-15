@@ -1,0 +1,114 @@
+/* frontend/app/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", Menlo, monospace;
+}
+
+/* ── Base resets ─────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #020617;
+  color: #F1F5F9;
+  font-family: var(--font-inter);
+  line-height: 1.5;
+  min-height: 100dvh;
+}
+
+/* ── Custom scrollbar — slim, matches the surface palette ───────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22D3EE;
+}
+
+/* ── Recharts overrides — force transparent backgrounds in dark theme ────── */
+.recharts-wrapper,
+.recharts-surface {
+  overflow: visible;
+}
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #1E293B;
+}
+.recharts-text {
+  fill: #64748B;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-data {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  .card {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 0.625rem;
+  }
+
+  .card-glow {
+    background-color: #1E293B;
+    border: 1px solid #22D3EE33;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0 1px #22D3EE22, 0 0 20px #22D3EE0D;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #64748B;
+  }
+}
+
+/* ── Focus ring — accessible, on-brand ──────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #22D3EE;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Reduced-motion compliance ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

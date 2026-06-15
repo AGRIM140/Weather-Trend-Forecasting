@@ -1,0 +1,18 @@
+# backend/requirements.txt
+# Install: pip install -r backend/requirements.txt
+
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+pydantic==2.7.4
+python-dotenv==1.0.1
+
+# The ML pipeline deps (already in root requirements.txt;
+# listed here so the backend can run independently)
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.0
+xgboost==2.0.3
+lightgbm==4.3.0
+statsmodels==0.14.2
+prophet==1.1.5
+shap==0.45.1
