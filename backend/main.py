@@ -105,6 +105,18 @@ async def lifespan(app: FastAPI):
 
 def _load_data() -> None:
     """Synchronous data-loading function run once in a thread at startup."""
+    import gdown
+
+    os.makedirs(os.path.dirname(RAW_DATA_PATH), exist_ok=True)
+
+    if not os.path.exists(RAW_DATA_PATH):
+        logger.info("Downloading dataset from Google Drive …")
+        gdown.download(
+            "https://drive.google.com/file/d/17Bc2Cmo6Ao-Z1Gkxcybq8c3uryR-sfwD/view?usp=sharing",
+            RAW_DATA_PATH,
+            quiet=False,
+        )
+
     if os.path.exists(PROCESSED_DATA_PATH):
         logger.info("Fast path: loading already-processed CSV.")
         df = pd.read_csv(PROCESSED_DATA_PATH)
